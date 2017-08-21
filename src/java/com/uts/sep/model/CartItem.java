@@ -9,7 +9,7 @@ package com.uts.sep.model;
  *
  * @author tomat
  */
-public class CartItem {
+public class CartItem extends BaseModel{
     int quantity;
     String size;
     int itemID;

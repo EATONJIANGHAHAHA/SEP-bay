@@ -9,7 +9,7 @@ package com.uts.sep.model;
  *
  * @author tomat
  */
-class OrderDetail {
+public class OrderDetail extends BaseModel{
     double orderPrice;
     int orderedQuantity;
     String orderedItemDescription;

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author tomat
  */
-public class ShoppingCart {
+public class ShoppingCart extends BaseModel{
     
     int shoppingCartID;
     int quantity;

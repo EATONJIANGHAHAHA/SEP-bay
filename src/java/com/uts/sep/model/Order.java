@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author tomat
  */
-public class Order {
+public class Order extends BaseModel{
     int orderID;
     Date dateOrderCreated;
     ArrayList<OrderDetail> orderDetails;

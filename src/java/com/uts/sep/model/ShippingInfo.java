@@ -11,7 +11,7 @@ import java.sql.Date;
  *
  * @author tomat
  */
-public class ShippingInfo {
+public class ShippingInfo extends BaseModel{
     int shippingID;
     String shippingType;
     int shippingCost;
