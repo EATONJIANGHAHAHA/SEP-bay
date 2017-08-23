@@ -5,12 +5,13 @@
  */
 package com.uts.sep.model;
 
-import java.lang.Object;
+import java.io.Serializable;
 /**
- *
+ *  by implementing interface Serializable, the class are now usable for
+ * jsb projects, (JavaBeans)
  * @author tomat
  */
-public abstract class BaseModel {
+public abstract class BaseModel implements Serializable{
     public void saveModel(Object object){
         //
     }
