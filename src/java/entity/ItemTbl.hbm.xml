@@ -4,9 +4,9 @@
 <!-- Generated 23-Aug-2017 14:07:15 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="entity.ItemTbl" table="item_tbl" catalog="sep" optimistic-lock="version">
-        <id name="itemId" type="int">
+        <id name="itemId" type="java.lang.Integer">
             <column name="item_id" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="itemName" type="string">
             <column name="item_name" length="50" not-null="true" />
