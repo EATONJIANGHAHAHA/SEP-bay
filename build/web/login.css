@@ -1,0 +1,25 @@
+
+ body{
+      margin-top:8000px;
+      text-align: center;
+ }
+ 
+ .login{
+     background-color: lightblue;
+    width: 60%;
+    margin: auto;  
+ }
+
+
+ .login input[type=text], input[type=password] {
+     width: 30%;
+     display: #333;
+     margin-bottom: 10px;
+     position: relative;
+ }
+ 
+ .login input[type=submit] {
+  width: 30%;
+  margin-bottom: 10px;
+  position: relative;
+}
