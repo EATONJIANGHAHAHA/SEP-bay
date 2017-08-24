@@ -18,33 +18,33 @@ import org.hibernate.cfg.Configuration;
  * @author lzy
  */
 public class itemDAO {
+
     private static SessionFactory factory;
-    
+
     //method to get all the items
-    public List<ItemTbl> getItems(){
+    public List<ItemTbl> getItems() {
         factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         Transaction tx = null;
         List<ItemTbl> list = null;
-        try{
+        try {
             tx = session.beginTransaction();
-            list =session.createQuery("FROM ItemTbl").list();
+            list = session.createQuery("FROM ItemTbl").list();
             tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
-        catch(HibernateException e){
-         if (tx!=null) tx.rollback();
-         e.printStackTrace();
-         }
-        finally {
-         session.close(); 
-      }
         return list;
 
     }
-    
 
     //method to upadte stock
-        public void updateStock(Integer itemId,int stock) {
+    public void updateStock(Integer itemId, int stock) {
         factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         Transaction tx = null;
@@ -63,7 +63,4 @@ public class itemDAO {
             session.close();
         }
     }
-
-
-    
 }

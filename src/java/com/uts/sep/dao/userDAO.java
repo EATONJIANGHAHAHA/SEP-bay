@@ -28,9 +28,26 @@ public class userDAO {
     private static SessionFactory factory = null;
     private static ServiceRegistry serviceRegistry = null;
     private static Configuration configuration = null;
+    
+    /**
+     * this method is to convert generated list into array list.
+     * @param users
+     * @return 
+     */
+    public ArrayList<UserTbl> convertListToArrayList(List<UserTbl> users) {
+        ArrayList<UserTbl> arrayListUsers = null;
+        for (UserTbl user : users) {
+            arrayListUsers.add(user);
+        }
+        return arrayListUsers;
+    }
 
-    // method to get all the users
-    public List<UserTbl> getUsers() {
+    /**
+     * this method is to get all users
+     *
+     * @return
+     */
+    public ArrayList<UserTbl> getAllUsers() {
         factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         Transaction tx = null;
@@ -48,10 +65,24 @@ public class userDAO {
         } finally {
             session.close();
         }
-        return list;
+        return convertListToArrayList(list);
     }
 
-    //method tp update status
+    public UserTbl getUser(Integer userID) {
+        ArrayList<UserTbl> users = getAllUsers();
+        for (UserTbl user:users){
+            if(Objects.equals(userID, user.getUserId())){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param userId
+     * @param status
+     */
     public void updateLoginStatus(Integer userId, int status) {
         factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
@@ -70,7 +101,6 @@ public class userDAO {
         } finally {
             session.close();
         }
-
     }
 
     //method to upadte password
@@ -78,7 +108,6 @@ public class userDAO {
         factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         Transaction tx = null;
-
         try {
             tx = session.beginTransaction();
             UserTbl user = (UserTbl) session.get(UserTbl.class, userId);
@@ -135,5 +164,4 @@ public class userDAO {
             session.close();
         }
     }
-
 }
