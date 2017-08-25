@@ -5,8 +5,8 @@
  */
 package com.uts.sep.dao;
 
+import com.uts.sep.entity.UserTbl;
 import org.hibernate.Session;
-import entity.*;
 import java.io.Serializable;
 import java.util.*;
 import org.hibernate.Transaction;

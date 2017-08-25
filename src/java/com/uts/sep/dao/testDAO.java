@@ -5,7 +5,7 @@
  */
 package com.uts.sep.dao;
 
-import entity.*;
+import com.uts.sep.entity.ItemTbl;
 import java.util.*;
 
 /**
