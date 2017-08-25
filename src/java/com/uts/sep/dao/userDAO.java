@@ -20,8 +20,8 @@ import org.hibernate.service.ServiceRegistry;
 public class userDAO {
 
     private static SessionFactory factory = null;
-    private static ServiceRegistry serviceRegistry = null;
-    private static Configuration configuration = null;
+//    private static ServiceRegistry serviceRegistry = null;
+//    private static Configuration configuration = null;
 
     /**
      * this method is to get all users
@@ -31,11 +31,11 @@ public class userDAO {
     public List<UserTbl> getAllUsers() {
         factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
-        Transaction tx = null;
+        Transaction tx = null;//operation
         List<UserTbl> list = null;
         try {
-            tx = session.beginTransaction();
-            Query query = session.createQuery("from UserTbl");
+            tx = session.beginTransaction();// open connection
+            Query query = session.createQuery("from UserTbl");//using the name from java
             list = query.list();
             tx.commit();
         } catch (HibernateException e) {
