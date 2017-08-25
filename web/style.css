@@ -1,0 +1,79 @@
+/****************************
+***********INDEX PAGE********
+*****************************/
+#wrapper {}
+
+.header {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px;
+}
+
+.count.display-none {
+    display: none;
+}
+
+.catnav-primary-list {
+    width: 100%;
+}
+
+ul.catnav-primary-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.catnav-primary-list li {
+    display: inline-block;
+}
+
+.sub-menu {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+.flex-container {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    justify-content: space-around;
+}
+
+.flex-item {
+    background: tomato;
+    padding: 5px;
+    width: 400px;
+    height: 400px;
+    margin-top: 10px;
+    line-height: 9em;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+/****************************
+***********lOGIN PAGE********
+*****************************/
+.login {
+    background-color: lightblue;
+    width: -;
+    width: 60%;
+    margin: auto;
+}
+
+
+.login input[type=text],
+input[type=password] {
+    width: 30%;
+    display: #333;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.login input[type=submit] {
+    width: 30%;
+    margin-bottom: 10px;
+    position: relative;
+}

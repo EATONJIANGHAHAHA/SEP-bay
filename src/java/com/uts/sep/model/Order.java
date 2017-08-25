@@ -5,6 +5,7 @@
  */
 package com.uts.sep.model;
 
+import com.uts.sep.dao.BaseDAO;
 import java.sql.Date;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author tomat
  */
-public class Order extends BaseModel{
+public class Order extends BaseDAO{
     int orderID;
     Date dateOrderCreated;
     ArrayList<OrderDetail> orderDetails;

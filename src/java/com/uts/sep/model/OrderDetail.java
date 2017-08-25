@@ -5,11 +5,13 @@
  */
 package com.uts.sep.model;
 
+import com.uts.sep.dao.BaseDAO;
+
 /**
  *
  * @author tomat
  */
-public class OrderDetail extends BaseModel{
+public class OrderDetail extends BaseDAO{
     double orderPrice;
     int orderedQuantity;
     String orderedItemDescription;

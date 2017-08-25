@@ -5,11 +5,13 @@
  */
 package com.uts.sep.model;
 
+import com.uts.sep.dao.BaseDAO;
+
 /**
  *
  * @author tomat
  */
-public class CartItem extends BaseModel{
+public class CartItem extends BaseDAO{
     int quantity;
     String size;
     int itemID;

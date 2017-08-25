@@ -5,13 +5,14 @@
  */
 package com.uts.sep.model;
 
+import com.uts.sep.dao.BaseDAO;
 import java.util.ArrayList;
 
 /**
  *
  * @author tomat
  */
-public class ShoppingCart extends BaseModel{
+public class ShoppingCart extends BaseDAO{
     
     int shoppingCartID;
     int quantity;

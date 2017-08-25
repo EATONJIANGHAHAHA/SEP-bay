@@ -5,11 +5,13 @@
  */
 package com.uts.sep.model;
 
+import com.uts.sep.dao.BaseDAO;
+
 /**
  *
  * @author lzy
  */
-public class User extends BaseModel{  
+public class User extends BaseDAO{  
   
     String id;
     String name;  
