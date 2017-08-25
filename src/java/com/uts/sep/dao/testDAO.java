@@ -16,7 +16,7 @@ public class testDAO {
 
     public static void main(String[] args) {
         itemDAO dao = new itemDAO();
-        List<ItemTbl> list = dao.getItems();
+        List<ItemTbl> list = dao.getAllItems();
 
         //dao.insertUser("ZheyiLu", "123456");
         for (int i = 0; i < list.size(); i++) {

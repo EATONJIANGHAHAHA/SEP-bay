@@ -19,9 +19,9 @@ import org.hibernate.cfg.Configuration;
 public class itemDAO {
 
     private static SessionFactory factory;
-
+    
     //method to get all the items
-    public List<ItemTbl> getItems() {
+    public List<ItemTbl> getAllItems() {
         factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         Transaction tx = null;
@@ -39,7 +39,6 @@ public class itemDAO {
             session.close();
         }
         return list;
-
     }
 
     //method to upadte stock

@@ -5,11 +5,13 @@
  */
 package com.uts.sep.model;
 
+import com.uts.sep.dao.BaseDAO;
+
 /**
  *
  * @author tomat
  */
-public class Item extends BaseModel{
+public class Item extends BaseDAO{
     int itemID;
     String itemName;
     String itemDescription;

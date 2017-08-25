@@ -5,13 +5,14 @@
  */
 package com.uts.sep.model;
 
+import com.uts.sep.dao.BaseDAO;
 import java.sql.Date;
 
 /**
  *
  * @author tomat
  */
-public class ShippingInfo extends BaseModel{
+public class ShippingInfo extends BaseDAO{
     int shippingID;
     String shippingType;
     int shippingCost;
