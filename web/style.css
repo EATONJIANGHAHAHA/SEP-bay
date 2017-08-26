@@ -57,12 +57,13 @@ ul.catnav-primary-list {
 .item.flex-container {
     display: flex;
     list-style: none;
-    /*flex-direction: row;*/
-    /*justify-content: flex-start;*/
+    
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .flex-item {
-    background-color: cornflowerblue;
+    background-color: #737b79;
     margin-right: 10px;
 }
 
@@ -113,6 +114,20 @@ a:hover {
 /*#sidebar ul li.selected a {*/
     /*color:#fff;*/
 /*}*/
+
+.product-detail.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+.image { /* manifying feature */
+    width: 22%;
+    height: 35vh; 
+    background-color: cadetblue;
+    margin-top: 23px;
+}
+.prod-des {
+    margin-left: 20px;
+}
 
 /****************************
 ***********lOGIN PAGE********

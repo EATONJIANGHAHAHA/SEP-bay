@@ -89,60 +89,35 @@ and open the template in the editor.
         </header>
         <!-- /menu-container -->
 
-        <!--<section class="banner">-->
-        <!--    <div class="jumbotron">-->
-        <!--        <div class="container">-->
-        <!--            <p><a class="btn btn-primary btn-lg" href="#" role="button">Start Shopping!</a></p>-->
-        <!--            <p>This is a full width banner</p>-->
-        <!--        </div>-->
-        <!--    </div>-->
-        <!--</section>-->
-
+<!--Main Content Here-->
         <section class="main-content group-width">
-            <div id="sidebar">
-                <h3>Categories</h3>
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="selected active">
-                        <a href="">All</a>
-                    </li>
-                    <!-- {% for c in categories %} embbed JSP here for loop all the cateogry??? --> 
-                    <li class="selected">
-
-                        <a href="#">Category 1</a>  <!--can loop all the categories?-->
-
-                        <!-- <a href="{{ c.get_absolute_url }}">{{ c.name }}</a> get the url link-->
-                    </li>
-                </ul>
+            <div class="product-detail flex-container">
+                <div class="image">
+                <!--<img src="{% if product.image %}{{ product.image.url }}{% else %}{% static " img/no_image.png " %}{% endif %}">-->
+                <img src="img/no_image.png"/>
+                </div>
+                <div class="prod-des">
+                <!--<h1>{{ product.name }}</h1>-->
+                    <h1>Product 1</h1>
+                    <!--<h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>-->
+                    <h2><a href="#">Category 1</a></h2>
+                    <!--<p class="price">${{ product.price }}</p> to getPrice from product model-->
+                    <p class="price">$0.00</p>
+                    <!--<form action="{% url " cart:cart_add " product.id %}" method="post">-->
+                    <form action="" method="post" class="form-group">
+                    <label for="sel1">Qty:</label>
+                          <select class="form-control" id="sel1">
+                            <option>1</option> <!-- can loop??? -->
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                          </select>
+                        <!--{{ cart_product_form }} {% csrf_token %}-->
+                        <input type="submit" value="Add to cart" class="btn btn-primary">
+                    </form>                         
+                </div>
+                <!--{{ product.description|linebreaks }}-->
             </div>
-            
-            <div id="main" class="product-list">
-                <!--<h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>-->
-                <h1>Products</h1>
-                <!--{% for product in products %} JSP should embed here for loop all the product and image--> 
-                <div class="item flex-container">
-                    <div class="flex-item">
-                        <a href="item.html" class="thumbnail"><!--<a href="{{ product.get_absolute_url }}">-->
-                          <img src="img/no_image.png" alt="click to see product detail">
-                        </a>
-                        <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
-                        <span>product.name</span><br>
-                        <span>Price: $0.00</span>
-                        <button type="button" class="btn btn-primary">Add cart</button>
-                    </div>
-
-
-                    <div class="flex-item">
-                        <a href="item.html" class="thumbnail"><!-- click to see the specific item? Can JSP does it too??? <a href="{{ product.get_absolute_url }}">-->
-                          <img src="img/no_image.png" alt="...">
-                        </a>
-                        <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
-                        <span>product.name</span><br>
-                        <span>Price: $0.00</span>
-                        <button type="submit" class="btn btn-primary">Add cart</button>
-                    </div>
-                </div> <!--flex container-->
-            </div>
-            
         </section>
 
 
