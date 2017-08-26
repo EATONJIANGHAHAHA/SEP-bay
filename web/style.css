@@ -49,27 +49,22 @@ ul.catnav-primary-list {
     border-radius: 0px;
 }
 
+.navbar-left {
+    width: 30%;
+    margin-top: 8px;
+}
+
 .item.flex-container {
     display: flex;
     list-style: none;
-    flex-direction: row;
-    padding: 0px;
-    margin: 0px;
-    /*justify-content: space-around;*/
+    /*flex-direction: row;*/
+    /*justify-content: flex-start;*/
 }
 
-/*.flex-item {*/
-/*    background: tomato;*/
-/*    padding: 5px;*/
-/*    width: 400px;*/
-/*    height: 400px;*/
-/*    margin-top: 10px;*/
-/*    line-height: 9em;*/
-/*    color: white;*/
-/*    font-weight: bold;*/
-/*    font-size: 3em;*/
-/*    text-align: center;*/
-/*}*/
+.flex-item {
+    background-color: cornflowerblue;
+    margin-right: 10px;
+}
 
 /*Side Bar Section*/
 #sidebar {

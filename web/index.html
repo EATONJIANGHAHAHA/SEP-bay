@@ -43,13 +43,15 @@ and open the template in the editor.
                     </div>
 
                     <div class="collapse navbar-collapse" id="main-menu">
-                        <form class="navbar-form navbar-left">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search for item or shop">
-                            </div>
-                            <button type="submit" class="btn btn-default">Search</button>
-                        </form>
-                        <ul class="nav navbar-nav account-nav apply-nav-height navbar-right">
+
+                        <div class="input-group navbar-left">
+                            <input type="text" class="form-control" placeholder="Search for item or shop">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                             </span>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">Sell on sepBay</a></li>
                             <li><a href="#">Register</a></li>
                             <li><a href="#">Sign in</a></li>
@@ -122,11 +124,25 @@ and open the template in the editor.
                         <a href="#" class="thumbnail"><!--<a href="{{ product.get_absolute_url }}">-->
                           <img src="img/no_image.png" alt="...">
                         </a>
-                    <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
-                    <span>product.name</span><br> <span>Price: $0.00</span>                        
+                        <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
+                        <span>product.name</span><br>
+                        <span>Price: $0.00</span>
+                        <button type="button" class="btn btn-success">Add cart</button>
                     </div>
-                </div>
+
+
+                    <div class="flex-item">
+                        <a href="#" class="thumbnail"><!--<a href="{{ product.get_absolute_url }}">-->
+                          <img src="img/no_image.png" alt="...">
+                        </a>
+                        <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
+                        <span>product.name</span><br>
+                        <span>Price: $0.00</span>
+                        <button type="button" class="btn btn-success">Add cart</button>
+                    </div>
+                </div> <!--flex container-->
             </div>
+            
         </section>
 
 
