@@ -113,16 +113,18 @@ and open the template in the editor.
                 </ul>
             </div>
             
-            <div id="main" class="product-list row">
+            <div id="main" class="product-list">
                 <!--<h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>-->
                 <h1>Products</h1>
                 <!--{% for product in products %} JSP should embed here for loop all the product and image--> 
-                <div class="item">
-                    <!--<a href="{{ product.get_absolute_url }}">-->
-                    <a href="#"><img src="img/no_image.png"/></a>
-                    
+                <div class="item flex-container">
+                    <div class="flex-item">
+                        <a href="#" class="thumbnail"><!--<a href="{{ product.get_absolute_url }}">-->
+                          <img src="img/no_image.png" alt="...">
+                        </a>
                     <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
-                    <p>product.name</p><br> <span>Price: $0.00</span>
+                    <span>product.name</span><br> <span>Price: $0.00</span>                        
+                    </div>
                 </div>
             </div>
         </section>
