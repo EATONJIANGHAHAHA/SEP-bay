@@ -100,6 +100,9 @@ a:hover {
     display:block;
 }
 
+/****************************
+***********Item PAGE*********
+*****************************/
 .item img {
     width: 242px;
     height: 220px;
@@ -127,6 +130,30 @@ a:hover {
 }
 .prod-des {
     margin-left: 20px;
+}
+
+.product-detail {
+    text-align:justify;
+}
+
+.product-detail .price {
+    color:#333;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.product-detail img {
+    width:40%;
+    float:left;
+    padding:0 20px 20px 0;
+}
+
+.product-detail h1 {
+    margin-bottom:0;
+}
+
+.product-detail h2 {
+    margin-top:10px;
 }
 
 /****************************
@@ -313,29 +340,7 @@ ul.errorlist {
     height: 22px;
 }
 
-.product-detail {
-    text-align:justify;
-}
 
-.product-detail .price {
-    color:#333;
-    font-size:28px;
-    font-weight:bold;
-}
-
-.product-detail img {
-    width:40%;
-    float:left;
-    padding:0 20px 20px 0;
-}
-
-.product-detail h1 {
-    margin-bottom:0;
-}
-
-.product-detail h2 {
-    margin-top:10px;
-}
 
 .order-form {
     float:left;

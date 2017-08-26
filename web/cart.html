@@ -39,7 +39,7 @@ and open the template in the editor.
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                   </button>
-                        <a class="navbar-brand apply-nav-height" id="sepBay-logo" href="#">sepBay</a>
+                        <a class="navbar-brand apply-nav-height" id="sepBay-logo" href="index.html">sepBay</a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="main-menu">
@@ -56,7 +56,7 @@ and open the template in the editor.
                             <li><a href="#">Register</a></li>
                             <li><a href="#">Sign in</a></li>
                             <li class="cart" data-sub-nav="cart">
-                                <a rel="nofollow" href="cart.html" class="nav-link" title="eCart" aria-labelledby="gnav-account-cart-description">
+                                <a href="cart.html" rel="nofollow" href="#" class="nav-link" title="eCart" aria-labelledby="gnav-account-cart-description">
                                     <!--<span class="nav-icon gnav-ss-icon gnav-ss-cart" aria-hidden="true"></span>-->
                                     <i class="fa fa-shopping-cart cart-icon" aria-hidden="true"></i>
                                     <span class="text-link">
@@ -90,36 +90,55 @@ and open the template in the editor.
         <!-- /menu-container -->
 
 <!--Main Content Here-->
-        <section class="main-content group-width">
-            <div class="product-detail flex-container">
-                <div class="image">
-                <!--<img src="{% if product.image %}{{ product.image.url }}{% else %}{% static " img/no_image.png " %}{% endif %}">-->
-                <img src="img/no_image.png" alt="this is an image"/>
-                </div>
-                <div class="prod-des">
-                <!--<h1>{{ product.name }}</h1>-->
-                    <h1>Product 1</h1>
-                    <!--<h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>-->
-                    <h2><a href="#">Category 1</a></h2>
-                    <!--<p class="price">${{ product.price }}</p> to getPrice from product model-->
-                    <p class="price">$0.00</p>
-                    <!--<form action="{% url " cart:cart_add " product.id %}" method="post">-->
-                    <form action="" method="post" class="form-group">
-                    <label for="sel1">Qty:</label>
-                          <select class="form-control" id="sel1">
-                            <option>1</option> <!-- can loop??? -->
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                          </select>
-                        <!--{{ cart_product_form }} {% csrf_token %}-->
-                        <input type="submit" value="Add to cart" class="btn btn-primary">
-                    </form>                         
-                </div>
-                <!--{{ product.description|linebreaks }}-->
-            </div>
-        </section>
+<section class="main-content group-width">
+    {% extends "shop/base.html" %} {% load static %} {% block title %} Your shopping cart {% endblock %} {% block content %}
+    <h1>Your shopping cart</h1>
+    <table class="cart">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+                <th>Unit price</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart %} {% with product=item.product %}
+            <tr>
+                <td>
+                    <a href="{{ product.get_absolute_url }}">
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                    </a>
+                </td>
+                <td>{{ product.name }}</td>
+                <td>
+                    <form action="{% url " cart:cart_add " product.id %}" method="post">
+                        {{ item.update_quantity_form.quantity }} {{ item.update_quantity_form.update }}
+                        <input type="submit" value="Update"> {% csrf_token %}
+                    </form>
+                </td>
+                <td><a href="{% url " cart:cart_remove " product.id %}">Remove</a></td>
+                <td class="num">${{ item.price }}</td>
+                <td class="num">${{ item.total_price }}</td>
+            </tr>
+            {% endwith %} {% endfor %}
+            <tr class="total">
+                <td>Total</td>
+                <td colspan="4"></td>
+                <td class="num">${{ cart.get_total_price }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="text-right">
+        <a href="{% url " shop:product_list " %}" class="button light">Continue shopping</a>
+        <a href="{% url " orders:order_create " %}" class="button">Checkout</a>
+    </p>
+    {% endblock %}
 
+</section>
+<!--End Main content-->
 
         <footer>
 
