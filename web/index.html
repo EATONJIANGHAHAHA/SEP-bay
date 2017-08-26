@@ -87,14 +87,14 @@ and open the template in the editor.
         </header>
         <!-- /menu-container -->
 
-        <section class="banner">
-            <div class="jumbotron">
-                <div class="container">
-                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Start Shopping!</a></p>
-                    <p>This is a full width banner</p>
-                </div>
-            </div>
-        </section>
+        <!--<section class="banner">-->
+        <!--    <div class="jumbotron">-->
+        <!--        <div class="container">-->
+        <!--            <p><a class="btn btn-primary btn-lg" href="#" role="button">Start Shopping!</a></p>-->
+        <!--            <p>This is a full width banner</p>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</section>-->
 
         <section class="main-content group-width">
             <div id="sidebar">
@@ -113,18 +113,16 @@ and open the template in the editor.
                 </ul>
             </div>
             
-            <div id="main" class="product-list">
+            <div id="main" class="product-list row">
                 <!--<h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>-->
                 <h1>Products</h1>
                 <!--{% for product in products %} JSP should embed here for loop all the product and image--> 
                 <div class="item">
                     <!--<a href="{{ product.get_absolute_url }}">-->
-                    <a href="#">
-                        <img src="img/no_image.png"/>
-                        <img src="img/no_image.png"/>
-                    </a>
+                    <a href="#"><img src="img/no_image.png"/></a>
+                    
                     <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
-                    <a href="#">product.name</a><br> <span>Price: $0.00</span>
+                    <p>product.name</p><br> <span>Price: $0.00</span>
                 </div>
             </div>
         </section>
