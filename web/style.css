@@ -1,22 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
-/*body { */
-/*    margin:0;*/
-/*    padding:0;*/
-/*    font-family:helvetica, sans-serif; */
-/*}*/
+body { 
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif; 
+}
 
 h1, h2, h3, h4, h5 , h6 { 
     font-family: 'Ubuntu', sans-serif; font-weight:normal;
 }
 
+
 /****************************
 ***********INDEX PAGE********
 *****************************/
-#wrapper {}
+#wrapper {
+   
+}
 
 .header {
     margin-bottom: 0px !important;
     padding-bottom: 0px;
+}
+.group-width {
+    max-width: 1300px !important;
+    margin: auto !important;
 }
 
 .count.display-none {
@@ -64,6 +71,48 @@ ul.catnav-primary-list {
     text-align: center;
 }
 
+/*Side Bar Section*/
+#sidebar {
+    width:220px;
+    padding:30px 20px 0 0;
+    float:left;
+}
+
+#sidebar ul{
+    margin:0;
+    padding:0;
+}
+li.selected a:hover {
+    background-color: #77b6e2;
+    color: #fff;
+}
+a {
+    text-decoration:none;
+    color:#5993bb;
+}
+
+a:hover {
+    color:#77b6e2;
+}
+/*#sidebar ul li {*/
+/*    margin:0;*/
+/*    list-style:none;*/
+/*    padding:10px 14px;*/
+/*}*/
+
+/*#sidebar ul li a {*/
+/*    display:block;*/
+/*}*/
+
+/*#sidebar ul li.selected {*/
+/*    background:#5993bb;*/
+/*    border-radius:4px;*/
+/*}*/
+
+/*#sidebar ul li.selected a {*/
+    /*color:#fff;*/
+/*}*/
+
 /****************************
 ***********lOGIN PAGE********
 *****************************/
@@ -89,24 +138,20 @@ input[type=password] {
     position: relative;
 }
 
+/****************************
+*********END lOGIN PAGE******
+*****************************/
 
-a {
-    text-decoration:none;
-    color:#5993bb;
-}
 
-a:hover {
-    color:#77b6e2;
-}
 
-a.button, input[type="submit"] {
-    color:#fff;
-    background:#5993bb;
-    border-radius:4px;
-    padding:10px 20px;
-    font-size:14px;
-    border:0;
-}
+/*a.button, input[type="submit"] {*/
+    /*color:#fff;*/
+/*    background:#5993bb;*/
+/*    border-radius:4px;*/
+/*    padding:10px 20px;*/
+/*    font-size:14px;*/
+/*    border:0;*/
+/*}*/
 
 a.button.light {
     color:#666;
@@ -227,35 +272,7 @@ ul.errorlist {
     overflow:hidden;
 }
 
-#sidebar {
-    width:220px;
-    padding:30px 20px 0 0;
-    float:left;
-}
 
-#sidebar ul{
-    margin:0;
-    padding:0;
-}
-
-#sidebar ul li {
-    margin:0;
-    list-style:none;
-    padding:10px 14px;
-}
-
-#sidebar ul li a {
-    display:block;
-}
-
-#sidebar ul li.selected {
-    background:#5993bb;
-    border-radius:4px;
-}
-
-#sidebar ul li.selected a {
-    color:#fff;
-}
 
 #main {
     float:left;
