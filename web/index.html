@@ -29,7 +29,7 @@ and open the template in the editor.
 
 <body>
     <div id="wrapper">
-        <header class="top-nav body-max-width">
+        <header class="top-nav body-max-width group-width">
             <nav class="navbar navbar-default navbar-static-top header">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -42,7 +42,7 @@ and open the template in the editor.
                         <a class="navbar-brand apply-nav-height" id="sepBay-logo" href="#">sepBay</a>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="main=menu">
+                    <div class="collapse navbar-collapse" id="main-menu">
                         <form class="navbar-form navbar-left">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Search for item or shop">
@@ -70,7 +70,7 @@ and open the template in the editor.
                 <!-- /.container-fluid -->
             </nav>
 
-            <div id="cnav-header" class="sub-menu cnav-header">
+            <div id="cnav-header" class="sub-menu cnav-header group-width">
                 <nav id="inner-nav" class="navbar navbar-default navbar-inverse sub-menu">
                     <ul id="catnav-menubar" class="catnav-primary-list nav">
                         <li class="active"><a href="#">Cateogry 1 <span class="sr-only">(current)</span></a></li>
@@ -91,11 +91,12 @@ and open the template in the editor.
             <div class="jumbotron">
                 <div class="container">
                     <p><a class="btn btn-primary btn-lg" href="#" role="button">Start Shopping!</a></p>
+                    <p>This is a full width banner</p>
                 </div>
             </div>
         </section>
 
-        <section class="main-content">
+        <section class="main-content group-width">
             <div id="sidebar">
                 <h3>Categories</h3>
                 <ul>
@@ -120,8 +121,8 @@ and open the template in the editor.
                         <img src="img/no_image.png"/>
                         <img src="img/no_image.png"/>
                     </a>
-                    <!--<a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
-                    <a href="{{ product.get_absolute_url }}">product.name</a><br> $product.price
+                    <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
+                    <a href="#">product.name</a><br> <span>Price: $0.00</span>
                 </div>
             </div>
         </section>

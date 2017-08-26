@@ -1,22 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
-/*body { */
-/*    margin:0;*/
-/*    padding:0;*/
-/*    font-family:helvetica, sans-serif; */
-/*}*/
+body { 
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif; 
+}
 
 h1, h2, h3, h4, h5 , h6 { 
     font-family: 'Ubuntu', sans-serif; font-weight:normal;
 }
 
+
 /****************************
 ***********INDEX PAGE********
 *****************************/
-#wrapper {}
+#wrapper {
+   
+}
 
 .header {
     margin-bottom: 0px !important;
     padding-bottom: 0px;
+}
+.group-width {
+    max-width: 1300px !important;
+    margin: auto !important;
 }
 
 .count.display-none {
