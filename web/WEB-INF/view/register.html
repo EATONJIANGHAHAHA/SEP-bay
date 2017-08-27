@@ -1,7 +1,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="login.css" type="text/css">
+        <link rel="stylesheet" href="../../css/login.css" type="text/css">
         <!-- Latest compiled and minified CSS -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -14,43 +14,46 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <div class="container">
-    <body>
-        <div class="register">
+    <div class="rego container">
+    <body class="rego-body">
+        <div class="register">       
+        <div class="col-md-offset-5 col-md-3">
+        <div class="form-rego">
             <h1>Register</h1><br>
-          <hr>
-          <div class="label">
+          <div class="rego-label">
               <label for="name" class="for-name">Your Username</label>
           </div>
           <div class="input-form">
               <input type="text" class="form" id="name" name="username" placeholder="Enter your Username"/>
           </div>  
-          
-          <div class="label">
+          </br>
+          <div class="rego-label">
               <label for="email" class="for-email">Your Email</label>
           </div>
           <div class="input-form">
               <input type="text" class="form" id="email" name="email" placeholder="Enter your eamil"/>
           </div>
-          
-          <div class="label">
+          </br>
+          <div class="rego-label">
               <label for="password" class="for-password">Password</label>
           </div>
           <div class="input-form">
               <input type="password" class="form" id="password" name="password" placeholder="Enter your Password"/>
           </div>
-          
-           <div class="label">
+          </br>
+           <div class="rego-label">
               <label for="Confirm Password" class="confirm-password">Confirm Passwor</label>
           </div>
           <div class="input-form">
               <input type="password" class="form" id="password" name="password" placeholder="Confirm your Password"/>
-          </div>
-          <div class="button">
+          </div></br>
+          <div class="rego button">
            <button type="button" name="register" class="register-button" >Register</button>
           </div>
-        
+        </div>
+        </div>
         </div>
     </body>
     </div>
+   
 </html>
