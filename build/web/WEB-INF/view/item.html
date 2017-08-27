@@ -39,7 +39,7 @@ and open the template in the editor.
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                   </button>
-                        <a class="navbar-brand apply-nav-height" id="sepBay-logo" href="#">sepBay</a>
+                        <a class="navbar-brand apply-nav-height" id="sepBay-logo" href="index.html">sepBay</a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="main-menu">
@@ -56,7 +56,11 @@ and open the template in the editor.
                             <li><a href="#">Register</a></li>
                             <li><a href="#">Sign in</a></li>
                             <li class="cart" data-sub-nav="cart">
+<<<<<<< HEAD:web/WEB-INF/view/item.html
                                 <a rel="nofollow" href="cart.jsp.html" class="nav-link" title="eCart" aria-labelledby="gnav-account-cart-description">
+=======
+                                <a href="cart.html" rel="nofollow" href="#" class="nav-link" title="eCart" aria-labelledby="gnav-account-cart-description">
+>>>>>>> patty-dev:build/web/index.html
                                     <!--<span class="nav-icon gnav-ss-icon gnav-ss-cart" aria-hidden="true"></span>-->
                                     <i class="fa fa-shopping-cart cart-icon" aria-hidden="true"></i>
                                     <span class="text-link">
@@ -89,6 +93,7 @@ and open the template in the editor.
         </header>
         <!-- /menu-container -->
 
+<<<<<<< HEAD:web/WEB-INF/view/item.html
 <!--Main Content Here-->
         <section class="main-content group-width">
             <div class="product-detail flex-container">
@@ -117,7 +122,62 @@ and open the template in the editor.
                     </form>                         
                 </div>
                 <!--{{ product.description|linebreaks }}-->
+=======
+        <!--<section class="banner">-->
+        <!--    <div class="jumbotron">-->
+        <!--        <div class="container">-->
+        <!--            <p><a class="btn btn-primary btn-lg" href="#" role="button">Start Shopping!</a></p>-->
+        <!--            <p>This is a full width banner</p>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</section>-->
+
+        <section class="main-content group-width">
+            <div id="sidebar">
+                <h3>Categories</h3>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="selected active">
+                        <a href="">All</a>
+                    </li>
+                    <!-- {% for c in categories %} embbed JSP here for loop all the cateogry??? --> 
+                    <li class="selected">
+
+                        <a href="#">Category 1</a>  <!--can loop all the categories?-->
+
+                        <!-- <a href="{{ c.get_absolute_url }}">{{ c.name }}</a> get the url link-->
+                    </li>
+                </ul>
             </div>
+            
+            <div id="main" class="product-list">
+                <!--<h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>-->
+                <h1>Products</h1>
+                <!--{% for product in products %} JSP should embed here for loop all the product and image--> 
+                <div class="item flex-container">
+                    <div class="flex-item">
+                        <a href="item.html" class="thumbnail"><!--<a href="{{ product.get_absolute_url }}">-->
+                          <img src="img/no_image.png" alt="click to see product detail">
+                        </a>
+                        <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
+                        <span>product.name</span><br>
+                        <span>Price: $0.00</span>
+                        <button type="button" class="btn btn-primary">Add cart</button>
+                    </div>
+
+
+                    <div class="flex-item">
+                        <a href="item.html" class="thumbnail"><!-- click to see the specific item? Can JSP does it too??? <a href="{{ product.get_absolute_url }}">-->
+                          <img src="img/no_image.png" alt="...">
+                        </a>
+                        <!-- Use JSP to render product name and price <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
+                        <span>product.name</span><br>
+                        <span>Price: $0.00</span>
+                        <button type="submit" class="btn btn-primary">Add cart</button>
+                    </div>
+                </div> <!--flex container-->
+>>>>>>> patty-dev:build/web/index.html
+            </div>
+            
         </section>
 
 
