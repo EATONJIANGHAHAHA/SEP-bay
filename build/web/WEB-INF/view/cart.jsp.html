@@ -29,7 +29,7 @@ and open the template in the editor.
 
 <body>
     <div id="wrapper">
-        <header class="top-nav body-max-width">
+        <header class="top-nav body-max-width group-width">
             <nav class="navbar navbar-default navbar-static-top header">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -39,22 +39,24 @@ and open the template in the editor.
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                   </button>
-                        <a class="navbar-brand apply-nav-height" id="sepBay-logo" href="#">sepBay</a>
+                        <a class="navbar-brand apply-nav-height" id="sepBay-logo" href="index.jsp.html">sepBay</a>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="main=menu">
-                        <form class="navbar-form navbar-left">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search for item or shop">
-                            </div>
-                            <button type="submit" class="btn btn-default">Search</button>
-                        </form>
-                        <ul class="nav navbar-nav account-nav apply-nav-height navbar-right">
+                    <div class="collapse navbar-collapse" id="main-menu">
+
+                        <div class="input-group navbar-left">
+                            <input type="text" class="form-control" placeholder="Search for item or shop">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                             </span>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">Sell on sepBay</a></li>
                             <li><a href="#">Register</a></li>
                             <li><a href="#">Sign in</a></li>
                             <li class="cart" data-sub-nav="cart">
-                                <a rel="nofollow" href="#" class="nav-link" title="eCart" aria-labelledby="gnav-account-cart-description">
+                                <a href="cart.jsp.html" rel="nofollow" href="#" class="nav-link" title="eCart" aria-labelledby="gnav-account-cart-description">
                                     <!--<span class="nav-icon gnav-ss-icon gnav-ss-cart" aria-hidden="true"></span>-->
                                     <i class="fa fa-shopping-cart cart-icon" aria-hidden="true"></i>
                                     <span class="text-link">
@@ -70,7 +72,7 @@ and open the template in the editor.
                 <!-- /.container-fluid -->
             </nav>
 
-            <div id="cnav-header" class="sub-menu cnav-header">
+            <div id="cnav-header" class="sub-menu cnav-header group-width">
                 <nav id="inner-nav" class="navbar navbar-default navbar-inverse sub-menu">
                     <ul id="catnav-menubar" class="catnav-primary-list nav">
                         <li class="active"><a href="#">Cateogry 1 <span class="sr-only">(current)</span></a></li>
@@ -87,45 +89,56 @@ and open the template in the editor.
         </header>
         <!-- /menu-container -->
 
-        <section class="banner">
-            <div class="jumbotron">
-                <div class="container">
-                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Start Shopping!</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="main-content">
-            <div id="sidebar">
-                <h3>Categories</h3>
-                <ul>
-                    <li class="selected" >
-                        <a href="">All</a>
-                    </li>
-                    <!-- {% for c in categories %} embbed JSP here for loop all the cateogry??? --> 
-                    <li class="selected">
-                        <a href="">Category</a> 
-                        <!-- <a href="{{ c.get_absolute_url }}">{{ c.name }}</a> get the url link-->
-                    </li>
-                </ul>
-            </div>
-            <div id="main" class="product-list">
-                <!--<h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>-->
-                <h1>Products</h1>
-                <!--{% for product in products %} JSP should embed here for loop all the product--> 
-                <div class="item">
-                    <!--<a href="{{ product.get_absolute_url }}">-->
-                    <a href="#">
-                        <!--Can JSP get the image from server?-->
-                        <img src="img/no_image.png"/>
-                        <img src="img/no_image.png"/>
+<!--Main Content Here-->
+<section class="main-content group-width">
+    {% extends "shop/base.html" %} {% load static %} {% block title %} Your shopping cart {% endblock %} {% block content %}
+    <h1>Your shopping cart</h1>
+    <table class="cart">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+                <th>Unit price</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart %} {% with product=item.product %}
+            <tr>
+                <td>
+                    <a href="{{ product.get_absolute_url }}">
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
                     </a>
-                    <!--<a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br> ${{ product.price }}-->
-                    <a href="{{ product.get_absolute_url }}">product.name</a><br> $product.price
-                </div>
-            </div>
-        </section>
+                </td>
+                <td>{{ product.name }}</td>
+                <td>
+                    <form action="{% url " cart:cart_add " product.id %}" method="post">
+                        {{ item.update_quantity_form.quantity }} {{ item.update_quantity_form.update }}
+                        <input type="submit" value="Update"> {% csrf_token %}
+                    </form>
+                </td>
+                <td><a href="{% url " cart:cart_remove " product.id %}">Remove</a></td>
+                <td class="num">${{ item.price }}</td>
+                <td class="num">${{ item.total_price }}</td>
+            </tr>
+            {% endwith %} {% endfor %}
+            <tr class="total">
+                <td>Total</td>
+                <td colspan="4"></td>
+                <td class="num">${{ cart.get_total_price }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="text-right">
+        <a href="{% url " shop:product_list " %}" class="button light">Continue shopping</a>
+        <a href="{% url " orders:order_create " %}" class="button">Checkout</a>
+    </p>
+    {% endblock %}
 
+</section>
+<!--End Main content-->
 
         <footer>
 
