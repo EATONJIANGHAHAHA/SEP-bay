@@ -4,12 +4,12 @@ body {
   font: normal 14px Roboto,arial,sans-serif;
 }
 
-.container {
+.login.container,.rego.container {
     padding: 26px;
     position: relative;
 }
 
-.form-login {
+.form-login, .form-rego {
     background-color: #EDEDED;
     padding-top: 15px;
     padding-bottom: 25px;
@@ -30,11 +30,11 @@ h1 {
  text-align: center;
 }
 
-.form-control {
+.form-control, .input-form {
     border-radius: 10px;
 }
 
-.button {
+.login.button, .rego.button {
     text-align: center;
 }
 label {
