@@ -1,9 +1,8 @@
-html {
-    font-size: 10px;
-    text-align:center;
-  	background-repeat: no-repeat;
+html, body {
+      height: 100%;
+ 	background-repeat: no-repeat;
  	background-color: #d3d3d3;
-    background-size: cover;
+ 	font-family: 'Oxygen', sans-serif;
     }
 label {
     display: inline-block;
@@ -13,41 +12,37 @@ label {
     color: #333;
     font-size: medium;
 }
-body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-repeat: no-repeat;
-}
-input {
-    -webkit-appearance: textfield;
-    background-color: white;
-    -webkit-rtl-ordering: logical;
-    user-select: text;
-    cursor: auto;
-    padding: 1px;
-    border-width: 2px;
-    border-style: inset;
-    border-image: initial;
-    padding-right:15px;
-   
-}
 
+input {
+     font-size: 11px;
+    padding-top: 3px;
+}
+input-form  {
+	    margin-bottom: 30px;
+
+}
  button {
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-shadow: none;
-    text-align:center;
-    display: inline-block;
     margin-top: 10px;
     font: 11px system-ui;
     padding-right: 104px;
-    background-color:#337ab7;
-    color: #666;}
+
 
 h1 {
-    margin: auto;
+	font-size: 50px;
+	font-weight: 400; 
+}
+.container {
+    padding: 26px;
+    position: relative;
+    background-color: #EDEDED;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 16px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow: 1px 0 #cfcfcf;
+    position: relative;
+    top: 230px;
 }
