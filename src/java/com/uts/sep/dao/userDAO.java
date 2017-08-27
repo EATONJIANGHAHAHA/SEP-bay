@@ -17,7 +17,7 @@ import org.hibernate.service.ServiceRegistry;
  *
  * @author lzy
  */
-public class userDAO {
+public class userDAO extends BaseDAO<UserTbl>{
 
     private static SessionFactory factory = null;
 //    private static ServiceRegistry serviceRegistry = null;

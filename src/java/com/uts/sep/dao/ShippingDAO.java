@@ -19,28 +19,30 @@ import org.hibernate.cfg.Configuration;
  *
  * @author tomat
  */
-public class ShippingDAO {
+public class ShippingDAO extends BaseDAO<ShippingTbl>{
     
-    private static SessionFactory factory = null;
+//    private static SessionFactory factory = null;
     
-    public List<ShippingTbl> getAllShipping() {
-        factory = new Configuration().configure().buildSessionFactory();
-        Session session = factory.openSession();
-        Transaction tx = null;//operation
-        List<ShippingTbl> list = null;
-        try {
-            tx = session.beginTransaction();// open connection
-            Query query = session.reateQuery("from UserTbl");//using the name from java
-            list = query.list();
-            tx.commit();
-        } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return list;
-    }
+//    public List<ShippingTbl> getAllShipping() {
+//        factory = new Configuration().configure().buildSessionFactory();
+//        Session session = factory.openSession();
+//        Transaction tx = null;//operation
+//        List<ShippingTbl> list = null;
+//        try {
+//            tx = session.beginTransaction();// open connection
+//            Query query = session.createQuery("from UserTbl");//using the name from java
+//            list = query.list();
+//            tx.commit();
+//        } catch (HibernateException e) {
+//            if (tx != null) {
+//                tx.rollback();
+//            }
+//            e.printStackTrace();
+//        } finally {
+//            session.close();
+//        }
+//        return list;
+//    }
+//    
+    
 }
