@@ -19,7 +19,22 @@ input[type="submit"], button[type="submit"] {
 }
 
 /* Tablet Layout: 768px. */
-@media only screen and (min-width: 768px) and (max-width: 991px) { 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.vertical-align {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+
+/*.grid-space-1 div[class*="col-"]{
+    padding: 0 1px;
+}*/
+
+.display-table {
+    display: table;
+    width: 100%;
+}
+
 .user-menu, .header-right ul.list-inline {
   text-align: center;
 }
