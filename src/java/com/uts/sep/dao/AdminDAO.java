@@ -49,7 +49,7 @@ public class AdminDAO extends BaseDAO<AdminTbl>{
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            AdminTbl admin = (AdminTbl) session.get(AdminTbl.class, adminId);
+            AdminTbl admin = (AdminTbl) session.get(AdminDAO.class, adminId);
             admin.setAdminName(name);
             session.update(admin);
             tx.commit();
