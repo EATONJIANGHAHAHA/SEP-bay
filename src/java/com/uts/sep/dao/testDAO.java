@@ -15,20 +15,21 @@ import java.util.*;
 public class testDAO {
 
     public static void main(String[] args) {
-//        itemDAO dao = new itemDAO();
-//        List<ItemTbl> list = dao.getAllItems();
-//
-//        //dao.insertUser("ZheyiLu", "123456");
-//        for (int i = 0; i < list.size(); i++) {
-//            ItemTbl item = new ItemTbl();
-//            item = list.get(i);
-//            System.out.print(item.getItemName());
-//            System.out.print(item.getStock());
-//            System.out.print(item.getPrice());
-//
-//        }
-        AdminDAO dao = new AdminDAO();
-        dao.getAll("from AdminTbl");
+        ItemDAO dao = new ItemDAO();
+        List<ItemTbl> list = dao.getAll(BaseDAO.ITEM_TBL);
+
+        //dao.insertUser("ZheyiLu", "123456");
+        for (int i = 0; i < list.size(); i++) {
+            ItemTbl item = new ItemTbl();
+            item = list.get(i);
+            System.out.print(item.getItemName());
+            System.out.print(item.getStock());
+            System.out.print(item.getPrice());
+
+        }
+        
+//        AdminDAO dao = new AdminDAO();
+//        dao.getAll("from AdminTbl");
     }
 
 }

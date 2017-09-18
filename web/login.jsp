@@ -129,7 +129,7 @@
                 
                 <table align ="center" style="border-collapse:separate; border-spacing:0px 10px;">
                     <tr>
-                        <th align="right">UserName: </th>
+                        <th align="right">User Name: </th>
                         <td><input type="text"  name="username" placeholder="Username"></td>
                     </tr>
                     <tr></tr>

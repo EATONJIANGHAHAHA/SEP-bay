@@ -6,7 +6,7 @@
 package com.uts.sep.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.uts.sep.dao.userDAO;
+import com.uts.sep.dao.UserDAO;
 
 /**
  *
@@ -32,7 +32,7 @@ public class RegisterAction extends ActionSupport {
 
     
     public String execute() throws Exception {
-        userDAO dao = new userDAO();
+        UserDAO dao = new UserDAO();
         dao.insertUser(username,password);
         return SUCCESS;
     }

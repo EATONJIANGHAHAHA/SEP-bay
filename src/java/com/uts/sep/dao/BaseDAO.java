@@ -20,6 +20,13 @@ import org.hibernate.cfg.Configuration;
  * @author tomat
  */
 public abstract class BaseDAO<T> {
+    
+    public static final String ADMIN_TBL = "AdminTbl";
+    public static final String CUSTOMER_TBL = "CustomerTbl";
+    public static final String ITEM_TBL = "ItemTbl";
+    public static final String ORDER_TBL = "OrderTbl";
+    public static final String SHIPPING_TBL = "ShippingTbl";
+    public static final String USER_TBL = "UserTbl";
 
     private Class<T> ClassType;
 
@@ -46,7 +53,7 @@ public abstract class BaseDAO<T> {
         List<T> list = null;
         try {
             tx = session.beginTransaction();// open connection
-            Query query = session.createQuery(tableNameStr);//using the name from java
+            Query query = session.createQuery("from " + tableNameStr);//using the name from java
             list = query.list();
             tx.commit();
         } catch (HibernateException e) {
