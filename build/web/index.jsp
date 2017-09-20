@@ -4,6 +4,7 @@
     Author     : lzy
 --%>
 
+<%@page import="com.uts.sep.entity.UserTbl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
@@ -38,7 +39,7 @@
         <![endif]-->
     </head>
     <body>
-
+        <% session.getAttribute("user_name");%>
         <div class="header-area">
             <div class="container">
                 <div class="row">
@@ -49,7 +50,11 @@
                                 <li><a href="register.jsp"><i class="fa fa-user"></i> Registration</a></li>
                                 <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
+                                <% if(session.getAttribute("user_name") == null){ %>
                                 <li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
+                                <% } else { %>
+                                <li><a href="login.jsp"><i class="fa fa-user"></i> <% out.print(session.getAttribute("user_name")); %></a></li>
+                                <% } %>
                             </ul>
                         </div>
                     </div>
