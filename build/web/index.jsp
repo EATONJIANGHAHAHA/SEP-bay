@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<%@page import="com.uts.sep.entity.UserTbl"%>
+<%! UserTbl user = null;%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,7 +40,8 @@
         <![endif]-->
     </head>
     <body>
-
+        <jsp:useBean id="userBean" class="com.uts.sep.entity.UserTbl" scope="application"/>
+        <% user = userBean;%>
         <div class="header-area">
             <div class="container">
                 <div class="row">
@@ -49,7 +52,12 @@
                                 <li><a href="register.jsp"><i class="fa fa-user"></i> Registration</a></li>
                                 <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
+                                <% if (session.getAttribute("user") == null) {%>
                                 <li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
+                                    <% } else { %>
+                                <li><i class="fa fa-user"></i> <% out.print(user.getUserName());%>
+                                    <% } %>
+
                             </ul>
                         </div>
                     </div>
@@ -127,10 +135,8 @@
         </div> <!-- End mainmenu area -->
 
         <div>
-                <img src="img/slide-1.jpg" style="width:100% ; height:80%;" >
-            </div>
-
-   
+            <img src="img/slide-1.jpg" style="width:100% ; height:80%;" >
+        </div>
 
         <div class="promo-area">
             <div class="zigzag-bottom"></div>
