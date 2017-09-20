@@ -11,6 +11,12 @@ public class UserTbl  implements Serializable {
      private Integer userId;
      private String userName;
      private String userPassword;
+     /*
+     for loginStatus:
+     0: not login in
+     1: login in
+     (feel free to add more)
+     */
      private int loginStatus;
 
     public UserTbl() {

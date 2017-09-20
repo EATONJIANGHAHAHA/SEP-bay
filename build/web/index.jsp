@@ -39,7 +39,6 @@
         <![endif]-->
     </head>
     <body>
-        <% session.getAttribute("user_name");%>
         <div class="header-area">
             <div class="container">
                 <div class="row">
@@ -53,7 +52,8 @@
                                 <% if(session.getAttribute("user_name") == null){ %>
                                 <li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
                                 <% } else { %>
-                                <li><a href="login.jsp"><i class="fa fa-user"></i> <% out.print(session.getAttribute("user_name")); %></a></li>
+                                <li><a href="login.jsp"><i class="fa fa-user"></i> Logout 
+                                        <% out.print(session.getAttribute("user_name")); %></a></li>
                                 <% } %>
                             </ul>
                         </div>

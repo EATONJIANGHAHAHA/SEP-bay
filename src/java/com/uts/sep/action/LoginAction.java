@@ -65,13 +65,13 @@ public class LoginAction extends ActionSupport implements SessionAware {
             }
 
         }
-        
-        if (usingUser.getUserName().equals(username) && usingUser.getUserPassword().equals(password)) {
+                
+        if (usingUser == null) {
+            return ERROR;
+        } else if (usingUser.getUserName().equals(username) && usingUser.getUserPassword().equals(password)){
             System.out.println(usingUser.getUserName());
             System.out.println(usingUser.getUserPassword());
             return SUCCESS;
-        } else if (null == usingUser){
-            return ERROR;
         } else {
             return ERROR;
         }

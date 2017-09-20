@@ -122,7 +122,13 @@
         </div> <!-- End mainmenu area -->
         <div>
             <br><br>
+            <% if (session.getAttribute("error_name").equals("user already exist")){ %>
+            <center><h1>Registration Failed, User Already Exist.</h1></center>
+            <% } else if(session.getAttribute("error_name").equals("form not complete")) { %>
+            <center><h1>Registration Failed, Please Complete Mandatory Fileds.</h1></center>
+            <% } else { %>
             <center><h1>Login Failed</h1></center>
+            <% } %>
             <center><p>The page will be re-directed in 5 seconds. Please wait a moment...</p></center>
             <br><br>
 
