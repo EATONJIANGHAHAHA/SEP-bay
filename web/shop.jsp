@@ -153,7 +153,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="single-shop-product">
                             <div class="product-upper">
-                                <img src="img/iphone.jpg" alt="">
+                                <img src="img/iphone_7.jpg" alt="">
                             </div>
                             <h2><a href="">Iphone 7 </a></h2>
                             <div class="product-carousel-price">
@@ -168,7 +168,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="single-shop-product">
                             <div class="product-upper">
-                                <img src="img/playstation.jpeg" alt="">
+                                <img src="img/playstation_4_pro.png" alt="">
                             </div>
                             <h2><a href="">Play Station 4 Pro</a></h2>
                             <div class="product-carousel-price">
@@ -183,9 +183,9 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="single-shop-product">
                             <div class="product-upper">
-                                <img src="img/macbookpro.jpg" alt="">
+                                <img src="img/macbook_pro.png" alt="">
                             </div>
-                            <h2><a href="">Laptop</a></h2>
+                            <h2><a href="">Macbook Pro</a></h2>
                             <div class="product-carousel-price">
                                 <ins>$1999.00</ins> <del>$2999.00</del>
                             </div>  
