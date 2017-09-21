@@ -4,6 +4,7 @@
     Author     : lzy
 --%>
 
+<%@page import="com.uts.sep.action.RegisterAction"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,10 +123,12 @@
         </div> <!-- End mainmenu area -->
         <div>
             <br><br>
-            <% if (session.getAttribute("error_name").equals("user already exist")){ %>
+            <% if (session.getAttribute(RegisterAction.ERROR_NAME).equals(RegisterAction.USER_ALREADY_EXIST_ERROR)){ %>
             <center><h1>Registration Failed, User Already Exist.</h1></center>
-            <% } else if(session.getAttribute("error_name").equals("form not complete")) { %>
+            <% } else if(session.getAttribute(RegisterAction.ERROR_NAME).equals(RegisterAction.FORM_NOT_COMPLETE_ERROR)) { %>
             <center><h1>Registration Failed, Please Complete Mandatory Fileds.</h1></center>
+            <% } else if(session.getAttribute(RegisterAction.ERROR_NAME).equals(RegisterAction.PASSWORD_NOT_REPEATED_ERROR)) { %>
+            <center><h1>Registration Failed, Please Check Password.</h1></center>
             <% } else { %>
             <center><h1>Login Failed</h1></center>
             <% } %>

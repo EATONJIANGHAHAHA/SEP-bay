@@ -22,6 +22,9 @@ public class RegisterAction extends ActionSupport implements SessionAware {
     
     public static final String ERROR_NAME = "error_name";
     public static final String USER_NAME = "user_name";
+    public static final String FORM_NOT_COMPLETE_ERROR = "form not complete";
+    public static final String USER_ALREADY_EXIST_ERROR = "user already exist";
+    public static final String PASSWORD_NOT_REPEATED_ERROR = "passwords are not correct";
 
     private String username = "";
     private String password = "";
@@ -65,13 +68,13 @@ public class RegisterAction extends ActionSupport implements SessionAware {
         UserTbl usingUser = null;
         
         if(username.equals("") || password.equals("") || repeatedPassword.equals("")){
-            this.session.put(ERROR_NAME, "form not complete");
+            this.session.put(ERROR_NAME, FORM_NOT_COMPLETE_ERROR);
             return ERROR;
         }
         for (UserTbl user: list){
             if(user.getUserName().equals(username)){
-                this.session.put(ERROR_NAME, "user already exist");
-                return MyAction.USER_EXISTS;
+                this.session.put(ERROR_NAME, USER_ALREADY_EXIST_ERROR);
+                return ERROR;
             }
         }
         if (password.equals(repeatedPassword)) {
@@ -79,20 +82,10 @@ public class RegisterAction extends ActionSupport implements SessionAware {
             UserTbl user = new UserTbl(username, password, 1);
             userDao.insertNew(user);
             return SUCCESS;
-        } else return ERROR;
-    }
-
-    /**
-     * this class customasing the result string which can be used later on.
-     */
-    public class MyAction implements Action {
-        
-        public static final String USER_EXISTS = "user exists";
-        
-
-        @Override
-        public String execute() throws Exception {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }   
+        } else if(!password.equals(repeatedPassword)){
+            this.session.put(ERROR_NAME, PASSWORD_NOT_REPEATED_ERROR);
+            return ERROR;
+        }
+        else return ERROR;
     }
 }

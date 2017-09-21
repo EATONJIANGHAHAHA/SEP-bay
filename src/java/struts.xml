@@ -14,7 +14,6 @@
         </action>
         <action name="register" class="com.uts.sep.action.RegisterAction" method="execute">
             <result name="success">/index.jsp</result>
-            <result name="user exists">/fail.jsp</result>
             <result name="error">/fail.jsp</result>
         </action>
       
