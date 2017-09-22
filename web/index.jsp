@@ -49,12 +49,12 @@
                                 <li><a href="register.jsp"><i class="fa fa-user"></i> Registration</a></li>
                                 <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                                <% if(session.getAttribute("user_name") == null){ %>
+                                    <% if (session.getAttribute("user_name") == null) { %>
                                 <li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
-                                <% } else { %>
+                                    <% } else { %>
                                 <li><a href="login.jsp"><i class="fa fa-user"></i> Logout 
                                         <% out.print(session.getAttribute("user_name")); %></a></li>
-                                <% } %>
+                                        <% }%>
                             </ul>
                         </div>
                     </div>
@@ -132,10 +132,10 @@
         </div> <!-- End mainmenu area -->
 
         <div>
-                <img src="img/slide-1.jpg" style="width:100% ; height:80%;" >
-            </div>
+            <img src="img/slide-1.jpg" style="width:100% ; height:80%;" >
+        </div>
 
-   
+
 
         <div class="promo-area">
             <div class="zigzag-bottom"></div>

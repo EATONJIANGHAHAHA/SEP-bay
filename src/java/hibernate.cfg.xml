@@ -14,5 +14,8 @@
     <mapping resource="com/uts/sep/entity/UserTbl.hbm.xml"/>
     <mapping resource="com/uts/sep/entity/OrderDetailTbl.hbm.xml"/>
     <mapping resource="com/uts/sep/entity/AdminTbl.hbm.xml"/>
+    <mapping resource="com/uts/sep/entity/ShoppingCartTbl.hbm.xml"/>
+    <mapping/>
+    <mapping/>
   </session-factory>
 </hibernate-configuration>
